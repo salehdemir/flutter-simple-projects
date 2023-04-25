@@ -10,7 +10,7 @@ class UserListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('User List'),
+        title: const Text('User List Screen'),
         actions: [
           IconButton(
             onPressed: () {
@@ -29,8 +29,8 @@ class UserListScreen extends StatelessWidget {
             : ListView.builder(
                 itemCount: greatUsers.items.length,
                 itemBuilder: (ctx, i) => ListTile(
-                  leading:Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                  leading: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Container(
@@ -38,16 +38,17 @@ class UserListScreen extends StatelessWidget {
                         height: 64,
                         width: 64,
                         child: CircleAvatar(
-                          backgroundImage: FileImage(greatUsers.items[i].image),  
+                          backgroundImage: FileImage(greatUsers.items[i].image),
                         ),
-                  ),
-                  Title(color: Colors.red, child: Text(greatUsers.items[i].title))
+                      ),
+                      Title(
+                          color: Colors.red,
+                          child: Text(greatUsers.items[i].title))
                     ],
-                    
                   ),
+                ),
               ),
       ),
-    ),
     );
   }
 }
